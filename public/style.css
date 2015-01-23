@@ -1,0 +1,126 @@
+body {
+    margin: 35px auto;
+    width: 640px;
+    color: ivory;
+}
+ 
+header {
+    text-align: center;
+    margin: 10px 0 20px;
+}
+ 
+header h1 {
+    display: inline;
+    color: midnightblue;
+    font-size: 38px;
+}
+ 
+header h1 a:link, header h1 a:visited {
+    color: midnightblue;
+    text-decoration: none;
+}
+ 
+header h2 {
+    font-size: 18px;
+    font-style: italic;
+    color: slategray;
+}
+ 
+#main {
+    margin: 30px 0 20px;
+}
+ 
+#add {
+/*    padding-top: 100px;
+    padding-left: 70px;
+    margin: 0 0 20px;*/
+}
+ 
+#add textarea {
+    height: 10px;
+    width: 30px;
+    /*padding: 10px;*/
+    border: 1px solid #ddd;
+}
+ 
+#add input {
+    height: 25px;
+    width: 150px;
+    margin-top: 20px;
+    /*margin: -100px 0 0;*/
+    margin-left: 200px;
+    border: 1px solid dimgray;
+    background: white;
+}
+
+#add input[type=submit] {
+    padding-left: 10px;
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    border: 1px solid #ddd;  
+    background: gainsboro;
+}
+
+#edit textarea {
+    height: 30px;
+    width: 480px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+ 
+#edit input[type=submit] {
+    height: 30px;
+    width: 40px;
+    display: inline-block;
+    border: 1px solid #ddd;
+}
+ 
+#edit input[type=checkbox] {
+    height: 50px;
+    width: 20px;
+}
+ 
+article {
+    border: 1px solid #eee;
+    border-top: none;
+    padding: 15px 10px;
+}
+ 
+article:first-of-type {
+    border: 1px solid #eee;
+}
+ 
+article:nth-child(even) {
+    background: #fafafa;
+}
+ 
+article.complete {
+    background: #fedae3;
+}
+ 
+article span {
+    font-size: 0.8em;
+}
+ 
+p {
+    margin: 0 0 5px;
+}
+ 
+.meta {
+    font-size: 0.8em;
+    font-style: italic;
+    color: #888;
+}
+ 
+.links {
+    font-size: 1.8em;
+    line-height: 0.8em;
+    float: right;
+    margin: -10px 0 0;
+}
+ 
+.links a {
+    display: block;
+    text-decoration: none;
+}
