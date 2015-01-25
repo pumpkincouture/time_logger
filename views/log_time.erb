@@ -1,0 +1,21 @@
+<section id="add">
+<form action="/billing" method="get">
+  <p>Please input the project date using this format : YYYY/MM/DD</p>
+  <input type="textbox" name="date"></br>
+  <p>Please input the project type.</p>
+      <p>PTO</p>
+        <input type="radio" name="project" value="1"/>
+      <p>Billable</p>
+        <input type="radio" name="project" value="2"/>
+      <p>Non-Billable</p>
+        <input type="radio" name="project" value="3" /></br>
+
+  <p>Please choose the client name, if billable project.</p>
+  <select class="client_options">
+     <% @clients.each do |client| %>
+      <option value=<%= client.name %>><%= client.name %></option>
+    <% end %>
+  </select></br>
+  <input type="submit" class="submit-button">
+</form>
+</section>

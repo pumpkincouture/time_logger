@@ -1,0 +1,16 @@
+  <article class="welcome" >
+  	<% @employees.each do |employee| %>
+    <p>Welcome, <%= employee.first %></p>        
+    <p>Please select what you'd like to do.</p>
+	<% end %>
+  </article>
+
+  <section id="add">
+  	 <form method="post" action="/selection">
+  	  <p>Log time</p>
+      <input type="radio" name="nonadmin" value="1"/>
+      <p>Request time report</p>
+      <input type="radio" name="nonadmin" value="2"/></br>
+      <input type="submit" value="Choose"/>
+    </form>
+  </section>

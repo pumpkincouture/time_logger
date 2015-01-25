@@ -1,7 +1,8 @@
 body {
     margin: 35px auto;
     width: 640px;
-    color: ivory;
+    background-color: ivory;
+    padding-bottom: 70px;
 }
  
 header {
@@ -12,18 +13,20 @@ header {
 header h1 {
     display: inline;
     color: midnightblue;
-    font-size: 38px;
+    font-size: 50px;
+    font-family: helvetica;
 }
  
 header h1 a:link, header h1 a:visited {
     color: midnightblue;
     text-decoration: none;
 }
- 
-header h2 {
-    font-size: 18px;
-    font-style: italic;
+
+.username_prompt {
+    font-size: 15px;
+    margin-left: 130px;
     color: slategray;
+    padding-bottom: 15px;
 }
  
 #main {
@@ -31,9 +34,7 @@ header h2 {
 }
  
 #add {
-/*    padding-top: 100px;
-    padding-left: 70px;
-    margin: 0 0 20px;*/
+  margin-top:;
 }
  
 #add textarea {
@@ -43,84 +44,45 @@ header h2 {
     border: 1px solid #ddd;
 }
  
-#add input {
+#add input[type=textbox] {
     height: 25px;
     width: 150px;
     margin-top: 20px;
-    /*margin: -100px 0 0;*/
-    margin-left: 200px;
+    margin-left: 230px;
     border: 1px solid dimgray;
     background: white;
 }
 
-#add input[type=submit] {
-    padding-left: 10px;
-    height: 30px;
-    width: 80px;
-    display: inline-block;
-    border: 1px solid #ddd;  
-    background: gainsboro;
+#add input[type=radio] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: white;
 }
 
-#edit textarea {
-    height: 30px;
-    width: 480px;
-    padding: 10px;
-    border: 1px solid #ddd;
-}
- 
-#edit input[type=submit] {
-    height: 30px;
-    width: 40px;
+
+#add input[type=submit] {
+    height: 35px;
+    width: 85px;
     display: inline-block;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd;  
+    background: deepskyblue;
+    border-radius: 20px;
+    margin-left: 260px;
+    margin-top: 20px;
 }
- 
-#edit input[type=checkbox] {
-    height: 50px;
-    width: 20px;
+
+.clients option { 
+    background:green; 
+    font-style: italic; 
+    color:white;
 }
- 
-article {
-    border: 1px solid #eee;
-    border-top: none;
-    padding: 15px 10px;
-}
- 
-article:first-of-type {
-    border: 1px solid #eee;
-}
- 
-article:nth-child(even) {
-    background: #fafafa;
-}
- 
-article.complete {
-    background: #fedae3;
+
+.welcome p {
+    font-family: garamond;
+    font-size: 18px;
+    color: darkslategrey;
 }
  
 article span {
     font-size: 0.8em;
-}
- 
-p {
-    margin: 0 0 5px;
-}
- 
-.meta {
-    font-size: 0.8em;
-    font-style: italic;
-    color: #888;
-}
- 
-.links {
-    font-size: 1.8em;
-    line-height: 0.8em;
-    float: right;
-    margin: -10px 0 0;
-}
- 
-.links a {
-    display: block;
-    text-decoration: none;
 }
