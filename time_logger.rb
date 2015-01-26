@@ -3,15 +3,8 @@ require 'data_mapper'
 require_relative 'lib/logger_constants.rb'
 require 'date'
 
-configure :development do
-    DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/time_logger.db")
-end
+DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/time_logger.db")
 
-configure :production do
-    DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_RED_URL'])
-end
-
-# DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/time_logger.db")
 include LoggerConstants
 
 class Employee
