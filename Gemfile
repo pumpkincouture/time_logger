@@ -10,7 +10,16 @@ gem 'data_mapper', '1.2.0'
 # group :production do
 #   gem 'pg'
 # end
+group :production do
+    gem "pg"
+    gem "dm-postgres-adapter"
+end
 
-gem 'dm-postgres-adapter', :group => :production
-gem 'dm-sqlite-adapter', :group => :development
+group :development, :test do
+    gem 'sqlite3', '~> 1.3.10'
+    gem "dm-sqlite-adapter"
+end
+
+# gem 'dm-postgres-adapter', :group => :production
+# gem 'dm-sqlite-adapter', :group => :development
 
