@@ -3,7 +3,7 @@ require 'data_mapper'
 require_relative 'lib/logger_constants.rb'
 require 'date'
 
-DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/time_logger.db")
+DataMapper.setup(:default, ENV["DATABASE_URL"] || "sqlite3://#{Dir.pwd}/time_logger.db")
 
 include LoggerConstants
 
