@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'sinatra', '1.4.5'
 gem 'data_mapper', '1.2.0'
-ruby '2.0.0'
+ruby '2.2.0'
 
 group :production do
     gem "dm-postgres-adapter"
