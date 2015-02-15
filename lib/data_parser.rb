@@ -15,7 +15,6 @@ class DataParser
 		keys = [:key, :name, :type]
 		open_clients.collect {|row| Hash[*keys.zip(row).flatten ] }
 	end
-
 	def get_projects
 		keys = [:key, :username, :year, :month, :day, :hours, :project_type]
 		open_projects.collect {|row| Hash[*keys.zip(row).flatten ] }
