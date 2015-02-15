@@ -22,6 +22,8 @@ class DataParser
 
   private
 
+  def hello
+  end
   def open_employees
   		@database.execute("select * from employee_table")
   end

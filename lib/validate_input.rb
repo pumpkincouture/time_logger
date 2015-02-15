@@ -1,6 +1,7 @@
 require_relative 'logger_constants'
 require_relative 'project_factory'
 require_relative 'file_writer'
+require 'model_citizen'
 
 class ValidateInput
 	include LoggerConstants
@@ -66,20 +67,11 @@ class ValidateInput
 	end
 
 	def validate_date_string(project_date)
-		if valid_string?(project_date)
-			validate_future(project_date)
+		if ModelCitizen::Validations.new.valid_date?(project_date)
+			return project_date
 		else
 			@ui.print_choice_error
 			self.validate_date_string(choose_project_date)
-		end
-	end	
-
-	def validate_future(project_date)
-		if past_date?(project_date)
-			return project_date
-		else
-			@ui.print_time_error
-			validate_date_string(choose_project_date)
 		end
 	end
 
@@ -98,7 +90,7 @@ class ValidateInput
 		@ui.prompt_for_client
 		@ui.display_clients(@clients)
 		@ui.capture_and_downcase
-	end	
+	end
 
 	def validate_client(choice)
 		@client_choice = client_choices(choice)
@@ -158,15 +150,6 @@ class ValidateInput
 
 	def get_year(project_date)
 	  Date.strptime(project_date, '%Y/%m/%d').year.to_s
-	end
-
-	def valid_string?(project_date)
-		y, m, d = project_date.split '/'
-		Date.valid_date? y.to_i, m.to_i, d.to_i
-	end
-
-	def past_date?(project_date)
-		Date.parse(project_date) < Date.today
 	end
 
 	def client_choices(choice)

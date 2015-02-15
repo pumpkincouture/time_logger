@@ -9,11 +9,11 @@ describe UserInterface do
 		client_list = []
 		client_list << @client_f.create_client({:name=>"Praxair", :type=>"standard"})
 		client_list << @client_f.create_client({:name=>"Aflac", :type=>"standard"})
-		client_list << @client_f.create_client({:name=>"Autodesk", :type=>"standard"})	
+		client_list << @client_f.create_client({:name=>"Autodesk", :type=>"standard"})
 		client_list
 	end
 
-	before :each do 
+	before :each do
 		@employee_f = EmployeeFactory.new
 		@ui = UserInterface.new
 		@client_f = ClientFactory.new
@@ -22,7 +22,7 @@ describe UserInterface do
 	end
 
 	it "prompts for username" do
-		expect { @ui.get_username }.to output("Please enter your unique username.\n").to_stdout
+		expect { @ui.get_username }.to output("Please enter your username to get started\n").to_stdout
 	end
 
 	it "welcomes the employee to the program" do
@@ -65,10 +65,10 @@ describe UserInterface do
 	end
 
 	it "prints permission error" do
-		expect { @ui.print_choice_error }.to output("That is not a valid choice, please try again.\n").to_stdout
+		expect { @ui.print_choice_error }.to output("That is not a valid choice, please try again\n").to_stdout
 	end
 
 	it "prints time error" do
-		expect { @ui.print_time_error }.to output("You cannot log time for the future, please select a different date.\n").to_stdout
+		expect { @ui.print_time_error }.to output("You cannot log time for the future, please select a different date\n").to_stdout
 	end
 end

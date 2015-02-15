@@ -1,4 +1,3 @@
-
 require 'sqlite3'
 require 'csv'
 
@@ -22,5 +21,5 @@ class SqlDataReader
 	def query_project
 		db = SQLite3::Database.open "time_logger.db"
 		db.execute("select username from timesheet_table where project_type = 'PTOProject'")
-	end		
+	end
 end
