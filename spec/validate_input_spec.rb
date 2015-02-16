@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-describe ValidateInput do 
+describe ValidateInput do
 
 	let (:employee) {@employee_f.create_employee({:first=>"Ryan", :last=>"Adams", :username=>"radams", :type=>"non-admin"})}
 
@@ -8,7 +8,7 @@ describe ValidateInput do
 		client_list = []
 		client_list << @client_f.create_client({:name=>"Praxair", :type=>"standard"})
 		client_list << @client_f.create_client({:name=>"Aflac", :type=>"standard"})
-		client_list << @client_f.create_client({:name=>"Autodesk", :type=>"standard"})	
+		client_list << @client_f.create_client({:name=>"Autodesk", :type=>"standard"})
 		client_list
 	end
 
@@ -20,7 +20,7 @@ describe ValidateInput do
 		employees
 	end
 
-	before :each do 
+	before :each do
 	  @employee_f = EmployeeFactory.new
 	  @client_f = ClientFactory.new
 	  @database = SQLite3::Database.open "time_logger.db"
@@ -31,7 +31,7 @@ describe ValidateInput do
 	  @project_factory = ProjectFactory.new(@code)
 	end
 
-	it "validates bill code" do 
+	it "validates bill code" do
 		@validator.validate_bill_code("2")
 		expect(@validator.bill_code).to eq("Non-billable")
 	end
@@ -39,7 +39,6 @@ describe ValidateInput do
 	it "validates date input" do
 		@validator.validate_bill_code("3")
 		@validator.validate_date_string("2014/11/2")
-		@validator.validate_future("2014/11/2")
 		@project_factory.code = @validator.bill_code
 		project = @project_factory.create_projects("2014","11","02","6")
 		@validator.project = project

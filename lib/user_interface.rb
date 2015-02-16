@@ -1,10 +1,11 @@
 require_relative 'logger_constants'
+require 'model_citizen'
 
 class UserInterface
 	include LoggerConstants
 
   def get_username
-    puts "Please enter your unique username."
+    puts ModelCitizen::Messages.new.get_message("username_prompt")
   end
 
   def welcome(employee)
@@ -12,23 +13,23 @@ class UserInterface
   end
 
   def choose_action
-    puts "Please select what you'd like to do."
+    puts ModelCitizen::Messages.new.get_message("choose_action")
   end
 
   def display_standard_options
   	STANDARD_OPTIONS.each {|number, option| puts "#{number} : #{option}"}
   end
-  
+
   def display_admin_options
   	ADMIN_OPTIONS.each {|number, option| puts "#{number} : #{option}"}
   end
 
   def prompt_for_bill_code
-    puts "Please choose your billcode."
+    puts ModelCitizen::Messages.new.get_message("enter_billing_type")
   end
 
   def print_choice_error
-    puts "That is not a valid choice, please try again."
+    puts ModelCitizen::Messages.new.get_message("invalid_choice")
   end
 
   def display_bill_code
@@ -36,7 +37,7 @@ class UserInterface
   end
 
   def prompt_for_client
-    puts "Please input the name of the client."
+    puts ModelCitizen::Messages.new.get_message("enter_client_name")
   end
 
   def display_clients(client_list)
@@ -52,36 +53,36 @@ class UserInterface
   end
 
   def get_employee_first
-    puts "Please enter employee first name."
+    puts ModelCitizen::Messages.new.get_message("enter_employee_first")
     capture_selection
   end
 
   def get_employee_last
-    puts "Please enter employee last name."
+    puts ModelCitizen::Messages.new.get_message("enter_employee_last")
     capture_selection
   end
 
   def get_employee_username
-    puts "Please enter employee username."
+    puts ModelCitizen::Messages.new.get_message("enter_employee_username")
     capture_and_downcase
   end
 
   def get_employee_type
-    puts "Please enter employee type (admin or non-admin)."
+    puts ModelCitizen::Messages.new.get_message("enter_employee_type")
     capture_and_downcase
   end
 
   def no_client_info
-    puts "No monthly information available for client." 
+    puts "No monthly information available for client."
   end
 
   def get_client_name
-    puts "Please enter client name."
+    puts ModelCitizen::Messages.new.get_message("enter_client_name")
     gets.chomp.capitalize
   end
 
   def get_client_type
-    puts "Please enter client type (if regular client, please enter 'standard')."
+    puts ModelCitizen::Messages.new.get_message("enter_client_type")
     capture_selection
   end
 
@@ -102,19 +103,19 @@ class UserInterface
   end
 
   def prompt_for_date
-    puts "Please input the project date using this format : YYYY/MM/DD"
+    puts ModelCitizen::Messages.new.get_message("enter_date")
   end
 
   def print_time_error
-    puts "You cannot log time for the future, please select a different date."
+    puts ModelCitizen::Messages.new.get_message("future_date_error")
   end
 
   def prompt_for_hours
-    puts "Please input hours worked"
+    puts ModelCitizen::Messages.new.get_message("enter_hours")
   end
 
   def print_client_error
-    puts "Client not found, please try again."
+    puts ModelCitizen::Messages.new.get_message("invalid_client")
   end
 
   def duplicate_exists

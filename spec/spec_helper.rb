@@ -20,5 +20,6 @@ RSpec.configure do |config|
   config.detail_color = :yellow
   config.tty = true
   config.color = true
+  config.order = :rand
   config.formatter = :documentation
 end
