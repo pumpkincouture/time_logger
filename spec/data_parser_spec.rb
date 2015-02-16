@@ -7,18 +7,12 @@ describe DataParser do
 	  @parser = DataParser.new(@database)
 	end
 
-	after :each do
-		@database.execute("drop sample_employees")
-	end
-
 	it "returns employees" do
-		@database.execute( "create table sample_employees (id INTEGER PRIMARY KEY, first TEXT, last TEXT, username TEXT, type TEXT);" )
-		@database.execute( "insert into sample_employees (first, last, username, type) values ('James', 'Krause', 'jkrause', 'non-admin')" )
-		expect(@parser.get_employees.last).to eq([ {:first => "James",
+		expect(@parser.get_employees.last).to eq({:first => "James",
        																					:key => 7,
        																					:last => "Krause",
        																					:type => "non-admin",
-       																					:username => "jkrause"} ])
+       																					:username => "jkrause"})
 	end
 
 	it "returns clients" do
@@ -34,6 +28,8 @@ describe DataParser do
 											{:key=>2, :username=>"tyorke", :year=>"2014", :month=>"11", :day=>"26", :hours=>"5", :project_type=>"PTOProject"},
 											{:key=>3, :username=>"jlewis", :year=>"2014", :month=>"11", :day=>"3", :hours=>"6", :project_type=>"Praxair"},
 											{:key=>4, :username=>"radams", :year=>"2015", :month=>"1", :day=>"16", :hours=>"6", :project_type=>"Aflac"},
-											{:key=>5, :username=>"wcorgan", :year=>"2015", :month=>"1", :day=>"17", :hours=>"3", :project_type=>"Sodexo"}] )
+											{:key=>5, :username=>"wcorgan", :year=>"2015", :month=>"1", :day=>"17", :hours=>"3", :project_type=>"Sodexo"},
+											{:key=>6, :username=>"radams", :year=>"2015", :month=>"1", :day=>"23", :hours=>"5", :project_type=>"NonBillableProject"},
+											{:key=>7, :username=>"radams", :year=>"2015", :month=>"2", :day=>"13", :hours=>"6", :project_type=>"NonBillableProject"}])
 	end
 end
